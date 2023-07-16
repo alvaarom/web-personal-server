@@ -38,6 +38,11 @@ bcryptjs@2.4.3:
   resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
   integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
 
+bluebird@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.0.5.tgz#2ff9d07c9b3edb29d6d280fe07528365e7ecd392"
+  integrity sha512-5o9RE3ued60EEv6gcT5L2APn/4zSpAwzeH65fuF+d/K3/LGZ9JpGIlDU2HeI4NujAY5Wh7mUBM5UF3Zuh8bBhQ==
+
 body-parser@1.20.1:
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.20.1.tgz#b1812a8912c195cd371a3ee5e66faa2338a5c668"
@@ -440,6 +445,13 @@ mongodb@5.6.0:
     socks "^2.7.1"
   optionalDependencies:
     saslprep "^1.0.3"
+
+mongoose-paginate@5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/mongoose-paginate/-/mongoose-paginate-5.0.3.tgz#d7ae49ed5bf64f1f7af7620ea865b67058c55371"
+  integrity sha512-sqrQJJ2nY7z2S5XzrMxbnlnAXpOnqyyM8t/FQ4Rv0uimYyacitmVSZOjlotbiQLI8I4v4hy3dCtJn31+OPl5Wg==
+  dependencies:
+    bluebird "3.0.5"
 
 mongoose@7.3.3:
   version "7.3.3"
