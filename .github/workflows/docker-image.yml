@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and publish manually
 
 on:
   push:
@@ -7,16 +7,16 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build:
+  build_and_push:
     runs-on: ubuntu-latest
-    
+    environment: 
+      name: Deploy PRD
     steps:
     - uses: actions/checkout@v3
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
-        token: ${{ secrets.DO_API_KEY }}
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - name: Log in to DO Container Registry 
       run: doctl registry login --expiry-seconds 600
     - name: Build and push the Docker image to DO
