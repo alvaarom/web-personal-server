@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: | 
+        docker login -u dop_v1_624e4f66f50e0c35d67846df90f47dbbd079aa310b09ba5ef5b81b237ab95561 -p dop_v1_624e4f66f50e0c35d67846df90f47dbbd079aa310b09ba5ef5b81b237ab95561 registry.digitalocean.com
+        docker build . --file Dockerfile --tag registry.digitalocean.com/webpersonal-server/image:latest
+        docker push registry.digitalocean.com/webpersonal-server/image:latest
