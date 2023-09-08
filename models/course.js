@@ -7,7 +7,7 @@ const CourseSchema = mongoose.Schema({
   description: String,
   url: String,
   price: Number,
-  Scrore: Number,
+  score: Number,
 });
 
 CourseSchema.plugin(mongoosePaginate);
