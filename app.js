@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { API_VERSION } = require("./constants");
+require("dotenv").config();
 
 const app = express();
 
@@ -24,11 +24,11 @@ app.use(express.static("uploads"));
 app.use(cors());
 
 // Configure routings
-app.use(`/api/${API_VERSION}`, authRoutes);
-app.use(`/api/${API_VERSION}`, userRoutes);
-app.use(`/api/${API_VERSION}`, menuRoutes);
-app.use(`/api/${API_VERSION}`, courseRoutes);
-app.use(`/api/${API_VERSION}`, postRoutes);
-app.use(`/api/${API_VERSION}`, newsletterRoutes);
+app.use(`/api/${process.env.API_VERSION}`, authRoutes);
+app.use(`/api/${process.env.API_VERSION}`, userRoutes);
+app.use(`/api/${process.env.API_VERSION}`, menuRoutes);
+app.use(`/api/${process.env.API_VERSION}`, courseRoutes);
+app.use(`/api/${process.env.API_VERSION}`, postRoutes);
+app.use(`/api/${process.env.API_VERSION}`, newsletterRoutes);
 
 module.exports = app;

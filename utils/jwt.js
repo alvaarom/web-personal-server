@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { JWT_SECRET_KEY } = require("../constants");
+require("dotenv").config();
 
 function createAccessToken(user) {
   const expToken = new Date();
@@ -12,7 +12,7 @@ function createAccessToken(user) {
     exp: expToken.getTime(),
   };
 
-  return jwt.sign(payload, JWT_SECRET_KEY);
+  return jwt.sign(payload, process.env.JWT_SECRET_KEY);
 }
 
 function createRefreshToken(user) {
@@ -26,11 +26,11 @@ function createRefreshToken(user) {
     exp: expToken.getTime(),
   };
 
-  return jwt.sign(payload, JWT_SECRET_KEY);
+  return jwt.sign(payload, process.env.JWT_SECRET_KEY);
 }
 
 function decode(token) {
-  return jwt.decode(token, JWT_SECRET_KEY, true);
+  return jwt.decode(token, process.env.JWT_SECRET_KEY, true);
 }
 
 module.exports = {
